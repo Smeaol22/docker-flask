@@ -16,6 +16,6 @@ setup(
     author='Dauloudet Olivier',
     url='https://github.com/Smeaol22/docker_flask',
     license=my_license,
-    package_dir={'': 'src'},
-    packages=find_packages(exclude=('tests', 'docs', 'example', 'conda'))
+    packages=find_packages('src'),
+    package_dir={'': 'src'}
 )
