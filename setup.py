@@ -10,7 +10,7 @@ with open('LICENSE') as f:
 
 setup(
     name='name of your project',
-    version='0.1.0',
+    version='0.0.1',
     description='put your description',
     long_description=readme,
     author='Dauloudet Olivier',
