@@ -9,7 +9,7 @@ with open('LICENSE') as f:
     my_license = f.read()
 
 setup(
-    name='name of your project',
+    name='docker-flask',
     version='0.0.1',
     description='put your description',
     long_description=readme,
