@@ -1,0 +1,1 @@
+docker run --publish 8180:8180 docker_flask:0.0.1
