@@ -1,4 +1,4 @@
-from docker_flask.app import launch
+from docker_flask.api.app import launch
 
 
 if __name__ == '__main__':
