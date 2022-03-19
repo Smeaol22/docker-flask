@@ -1,6 +1,6 @@
 import docker
 
-from docker_flask.conf import BASE_CONTAINER_ADDRESS, EXPOSE_PORT, DOCKER_IMAGE
+from docker_flask.docker.conf import BASE_CONTAINER_ADDRESS, EXPOSE_PORT, DOCKER_IMAGE
 
 
 class DockerConnection:
@@ -12,7 +12,7 @@ class DockerConnection:
         self.docker_image_name = DOCKER_IMAGE
 
     def start(self, cpu_nb=1):
-        for index in range(0, cpu_nb):
+        for index in range(1, cpu_nb + 1):
             container = self.client.containers.run(self.docker_image_name,
                                                    ports={
                                                        '8180/tcp': (f'{self.base_address}.{index}', self.expose_port)},
@@ -22,3 +22,7 @@ class DockerConnection:
     def stop_all(self):
         for container in self.container_list:
             container.stop()
+
+    def remove_all(self):
+        for container in self.container_list:
+            container.remove()
