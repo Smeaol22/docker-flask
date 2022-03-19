@@ -19,10 +19,10 @@ class DockerConnection:
                                                    detach=True)
             self.container_list.append(container)
 
-    def stop_all(self):
+    def stop_all_container(self):
         for container in self.container_list:
             container.stop()
 
-    def remove_all(self):
+    def remove_all_container(self):
         for container in self.container_list:
             container.remove()
