@@ -26,3 +26,9 @@ class DockerConnection:
     def remove_all_container(self):
         for container in self.container_list:
             container.remove()
+
+    def stop_and_remove_all_flask_docker_container(self):
+        for container in self.client.containers.list():
+            if self.client.containers.list()[0].image.tags[0] == 'docker_flask:0.0.1':
+                container.stop()
+                container.remove()
