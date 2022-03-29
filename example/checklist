@@ -4,8 +4,8 @@ docker build . -f ./docker/Dockerfile -t docker_flask:0.0.1
 
 step2. Execute docker image/container
 -------------------------------------
-docker run --publish 8180:8180 docker_flask:0.0.1
+docker run --publish 8082:8082 docker_flask:0.0.1 --port="8082"
 
 step3. Check if service is started
 ----------------------------------
-goes at http://localhost:8180 => 'IS UP!' should be display
+goes at http://localhost:8082 => 'IS UP!' should be display

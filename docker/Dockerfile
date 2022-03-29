@@ -24,8 +24,9 @@ RUN source activate myenv && conda install flask
 RUN source activate myenv && pip install --no-cache-dir /opt/docker_flask/docker_flask-0.0.1-py3-none-any.whl
 
 # open docker port
-EXPOSE 8180/tcp
+EXPOSE 8180-8190/tcp
 
 # define entry point
 COPY docker/main.py src/main.py
 ENTRYPOINT ["/opt/conda/envs/myenv/bin/python", "src/main.py"]
+CMD ["--port=8180"]

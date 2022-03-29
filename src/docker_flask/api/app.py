@@ -3,8 +3,7 @@ import json
 from flask import Flask, request, Response
 
 
-def launch():
-    port = 8180
+def launch(port="8180", host="0.0.0.0"):
     app = Flask(__name__)
 
     @app.route('/')
@@ -24,4 +23,4 @@ def launch():
                 mimetype='application/json', status=500
             )
 
-    app.run(host="0.0.0.0", port=port)
+    app.run(host=host, port=port)
